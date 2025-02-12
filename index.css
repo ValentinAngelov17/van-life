@@ -180,8 +180,12 @@ header a:hover {
 
 .van-info span {
     font-weight: 300;
+    font-size: 1rem;
 }
 
+.van-info h3 {
+    font-size: 1.1rem;
+}
 .van-tile {
     margin-bottom: 20px;
 }
