@@ -152,10 +152,15 @@ header a:hover {
     justify-content: center;
 }
 
-.van-tile>img {
-    width: 200px;
-    height: 200px;
+.van-tile> a >img {
+    width: 160px;
+    height: 160px;
     border-radius: 8px;
+}
+
+.van-tile > a {
+    text-decoration: none;
+    color: black;
 }
 
 .van-info {
@@ -179,4 +184,44 @@ header a:hover {
 
 .van-tile {
     margin-bottom: 20px;
+}
+
+.van-detail {
+    display: flex;
+    flex-direction: column;
+    color: #161616;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.van-detail img {
+    border-radius: 5px;
+    margin-block: 47px;
+   
+}
+
+.van-detail h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.van-detail > i {
+    align-self: flex-start;
+}
+
+.van-detail .van-price {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.van-detail .van-price span {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.van-detail .link-button {
+    background-color: #FF8C38;
+    color: white;
+    font-size: 1.125rem;
 }

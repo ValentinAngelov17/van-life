@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "../server"
 import React from "react"
 
@@ -25,12 +26,14 @@ export default function Vans() {
     };
     const vanElements = vans.map(van => (
         <div key={van.id} className="van-tile">
-            <img src={van.imageUrl} />
-            <div className="van-info">
-                <h3>{van.name}</h3>
-                <p>${van.price}<span>/day</span></p>
-            </div>
-            <i style={getVanStyle(van.type)}>{van.type[0].toUpperCase() + van.type.slice(1)}</i>
+            <Link to={`/vans/${van.id}`}>
+                <img src={van.imageUrl} />
+                <div className="van-info">
+                    <h3>{van.name}</h3>
+                    <p>${van.price}<span>/day</span></p>
+                </div>
+                <i style={getVanStyle(van.type)}>{van.type[0].toUpperCase() + van.type.slice(1)}</i>
+            </Link>
         </div>
     ))
 
