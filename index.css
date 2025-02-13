@@ -160,13 +160,13 @@ header a:hover {
     justify-content: center;
 }
 
-.van-tile> a >img {
+.van-tile>a>img {
     width: 160px;
     height: 160px;
     border-radius: 8px;
 }
 
-.van-tile > a {
+.van-tile>a {
     text-decoration: none;
     color: black;
 }
@@ -194,6 +194,7 @@ header a:hover {
 .van-info h3 {
     font-size: 1.1rem;
 }
+
 .van-tile {
     margin-bottom: 20px;
 }
@@ -210,7 +211,7 @@ header a:hover {
 .van-detail img {
     border-radius: 5px;
     margin-block: 47px;
-   
+
 }
 
 .van-detail h2 {
@@ -218,7 +219,7 @@ header a:hover {
     margin-bottom: 10px;
 }
 
-.van-detail > i {
+.van-detail>i {
     align-self: flex-start;
 }
 
@@ -236,4 +237,85 @@ header a:hover {
     background-color: #FF8C38;
     color: white;
     font-size: 1.125rem;
+}
+
+a.active-link {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #161616;
+}
+
+footer {
+    background-color: #161616;
+    color: white;
+    height: 74px;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    font-weight: 500;
+}
+
+.host-nav {
+    display: flex;
+    justify-content: end;
+
+
+}
+
+.host-nav a {
+    text-decoration: none;
+    color: #4D4D4D;
+    padding: 5px 20px;
+}
+
+/* const vanElements = vans.map(van => (
+        <div key={van.id} className="host-van-container">
+            <Link to={`/host/vans/${van.id}`}>
+                <img src={van.imageUrl} />
+                <div className="host-van-info">
+                    <h3>{van.name}</h3>
+                    <p>${van.price}/day</p>
+                </div>
+            </Link>
+        </div>
+    ))*/
+
+.host-van-link-wrapper {
+    color: unset;
+    text-decoration: unset;
+}
+
+.host-vans-list {
+    padding-inline: 26px;
+}
+
+.host-vans-title {
+    padding-inline: 26px;
+}
+
+.host-van-single {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 15px;
+    padding-block: 18px;
+    padding-left: 24px;
+}
+
+.host-van-single>img {
+    height: 70px;
+    border-radius: 5px;
+    margin-right: 17px;
+}
+
+.host-van-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-block: 10px;
+}
+
+.host-van-info p {
+    margin-block: 10px;
 }
