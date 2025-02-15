@@ -259,7 +259,8 @@ footer {
 
 .host-nav {
     display: flex;
-    justify-content: end;
+    justify-content: start;
+    margin-bottom: 30px;
 
 
 }
@@ -269,6 +270,8 @@ footer {
     color: #4D4D4D;
     padding: 5px 20px;
 }
+
+
 
 /* const vanElements = vans.map(van => (
         <div key={van.id} className="host-van-container">
@@ -304,7 +307,7 @@ footer {
     padding-left: 24px;
 }
 
-.host-van-single>img {
+.host-van-single>.host-img {
     height: 70px;
     border-radius: 5px;
     margin-right: 17px;
@@ -318,4 +321,57 @@ footer {
 
 .host-van-info p {
     margin-block: 10px;
+}
+
+.host-selected-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 5px;
+}
+
+.host-current-van-details {
+    display: flex;
+    background-color: white;
+    margin: 0px 27px;
+    padding-top: 27px;
+    justify-content: start;
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.host-van-selected-info h3 {
+    font-size: 1.5rem;
+}
+
+.host-van-selected {
+    background-color: white;
+    width: calc(100% - 30px);
+    margin: 30px auto;
+}
+
+.host-van-selected-info span {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.back-button {
+    color: unset;
+    padding: 20px 20px;
+    
+}
+
+.host-nav-van {
+    display: flex;
+    justify-content: start;
+    margin-left: 27px;
+    gap: 20px;
+    padding: 30px 0px;
+
+
+}
+
+.host-nav-van a {
+    text-decoration: none;
+    color: #4D4D4D;
 }
