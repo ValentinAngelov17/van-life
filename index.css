@@ -406,3 +406,21 @@ footer {
     margin-left: 27px;
     margin-bottom: 27px;
 }
+
+.van-filters {
+    width: 80%;
+    margin: 0px auto 28px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+
+}
+
+.van-filters a {
+    padding: 6px 10px;
+    background-color:#f8e4ca;
+    text-decoration: none;
+    color: unset;
+}
+

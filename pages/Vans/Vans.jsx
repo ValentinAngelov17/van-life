@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 import "../../server"
 import React from "react"
 
@@ -10,6 +10,12 @@ export default function Vans() {
             .then(res => res.json())
             .then(data => setVans(data.vans))
     }, [])
+
+    const [searchParams, setSearchParams] = useSearchParams()
+
+    const typeFilter = searchParams.get("type")
+    const possibleTypes = ["simple", "luxury", "rugged"]
+    const selectedVans = possibleTypes.includes(typeFilter) ? vans.filter(van => van.type === typeFilter) : vans
 
     const getVanStyle = (type) => {
         const colors = {
@@ -24,7 +30,7 @@ export default function Vans() {
             borderRadius: "10px"
         };
     };
-    const vanElements = vans.map(van => (
+    const vanElements = selectedVans.map(van => (
         <div key={van.id} className="van-tile">
             <Link to={`/vans/${van.id}`}>
                 <img src={van.imageUrl} />
@@ -39,6 +45,12 @@ export default function Vans() {
 
     return (
         <>
+            <div className="van-filters">
+                <Link to="?type=simple">Simple</Link>
+                <Link to="?type=luxury">Luxury</Link>
+                <Link to="?type=rugged">Rugged</Link>
+                <Link to="." style={{backgroundColor: "unset", textDecoration: "underline"}}>Clear filters</Link>
+            </div>
             <div className="container">
                 {vanElements}
             </div>
