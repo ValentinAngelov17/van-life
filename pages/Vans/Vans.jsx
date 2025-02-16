@@ -19,7 +19,7 @@ export default function Vans() {
 
     const getVanStyle = (type) => {
         const colors = {
-            simple: "#FF8C38",
+            simple: "#E17654",
             luxury: "black",
             rugged: "#074507"
         };
@@ -43,13 +43,24 @@ export default function Vans() {
         </div>
     ))
 
+    function handleFilterChange(key, value) {
+        setSearchParams(prevParams => {
+            if (value === null) {
+                prevParams.delete(key)
+            } else {
+                prevParams.set(key, value)
+            }
+            return prevParams
+        })
+    }
+
     return (
         <>
             <div className="van-filters">
-                <Link to="?type=simple">Simple</Link>
-                <Link to="?type=luxury">Luxury</Link>
-                <Link to="?type=rugged">Rugged</Link>
-                <Link to="." style={{backgroundColor: "unset", textDecoration: "underline"}}>Clear filters</Link>
+                <button className={typeFilter === "simple" ? "van-type simple selected" : "van-type simple"} onClick={() => handleFilterChange("type", "simple")}>Simple</button>
+                <button className={typeFilter === "luxury" ? "van-type luxury selected" : "van-type luxury"} onClick={() => handleFilterChange("type", "luxury")}>Luxury</button>
+                <button className={typeFilter === "rugged" ? "van-type rugged selected" : "van-type rugged"} onClick={() => handleFilterChange("type", "rugged")}>Rugged</button>
+                {typeFilter ? <button onClick={() => handleFilterChange("type", null)}>Clear filters</button> : null}
             </div>
             <div className="container">
                 {vanElements}
