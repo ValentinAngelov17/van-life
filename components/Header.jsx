@@ -10,7 +10,7 @@ export default function Header() {
                 <NavLink to="/vans" className={({ isActive }) => isActive ? "active-link" : null}>Vans</NavLink>
                 <Link to="login" className="login-link">
                     <img
-                        src={"../assets/images/avatar-icon.png"}
+                        src={avatarImg}
                         className="login-icon"
                     />
                 </Link>
